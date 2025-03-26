@@ -93,14 +93,23 @@ if (($username && $password) XOR ($email && $password)) {
     echo "<p>Veuillez fournir soit un nom d'utilisateur et un mot de passe, soit une adresse e-mail et un mot de passe, mais pas les deux.</p>";
 }
 
-// l'operateur &&
-//-----------------
+
+// l'operateur AND écrit &&
+//--------------------------
+
+$var1=2;
+$var2=3;
+$var3=4;
+
+if($var1>$var2 && $var2>$var3){
+    echo " les deux conditions sont vraies";
+}else{
+    echo " au moins une des deux conditions est fausse";
+}
 
 
-
-
-// l'operateur ||
-//-----------------
+// l'operateur OR écrit ||
+//-------------------------
 
 if($a===9 || $b>$c){ // si $a est strictement égale à 9 ou si $b est plus grand que $c
     echo "<p> Ok pour au moins une des deux conditions </p>";
