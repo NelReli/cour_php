@@ -116,6 +116,7 @@ echo $user2["id"];
 echo "<br>";
 var_dump($user2);
 echo "<br>";
+var_export($user2);
 
 //PHP ne fait pas la différence entre un tableau indexé et un tableau associatif
 // Quand on affiche le print_r() ou var_dump() l'affichage est le même
@@ -124,9 +125,9 @@ echo "<br>";
 // Ajout élément dans un tableau associatif :
 //--------------------------------------------
 
-$user2["password"]="123456";
+$user2["password"]="123456"; // méthode à utiliser //
 
-array_push($user2,["ville"=>"Toulouse"]); // ne pas utiliser avec les tableaux associatifs parce que ça crée tjs des index
+array_push($user2,["ville"=>"Toulouse"]); // ne pas utiliser avec les tableaux associatifs ni les multidimensionnels parce que ça crée tjs des index
 echo "<pre>";
 var_dump($user2);
 echo "</pre>";

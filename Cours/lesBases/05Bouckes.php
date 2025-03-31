@@ -121,6 +121,28 @@ foreach( $ville as $index=>$valeur ) {
 }
 
 
+$tab5=[
+    "Tab1"=>[1,2,3],
+    "Tab2"=>[4,5,6],
+    "Tab3"=>[7,8,9]
+];
+
+echo "<pre>";
+var_export ($tab5);
+"</pre>";
+
+foreach($tab5 as $key=>$tabIndex){
+    // on affiche l'index des tableaux (tabIndex est un tableau)
+    echo "<hr>tableau index : $key<hr>";
+    foreach($tabIndex as $value) // on fait un deuxieme foreach pour afficher valeur des tableaux
+    echo "<p> valeur : $value</p>";
+}
+
+
+
+
+
+//réponse exo boucles.php
 
 ?>
 

@@ -232,3 +232,24 @@ Résultat attendu :
 <li> age: age </li>
 </ul>
 <li> Personne 2 </li> -->
+
+$person=[
+    "Person01"=>[
+        "prenom"=>"Nel",
+        "nom"=>"Heni"
+        "age"=>37
+        ]
+    "Person02"=>[
+        "prenom"=>"Nael",
+        "nom"=>"Hani"
+        "age"=>27
+        ]
+    "Person03"=>[
+        "prenom"=>"Nwel",
+        "nom"=>"Henn"
+        "age"=>47
+        ]
+    
+]
+
+foreach ($person as $)
