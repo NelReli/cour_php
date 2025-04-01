@@ -155,6 +155,7 @@ $personne=[
     ],
     "ville"=>"Casablanca",
 ];
+echo print_r($personne);
 echo count($personne);
 echo "<br>";
 echo count($personne["age"]);
