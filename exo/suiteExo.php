@@ -54,11 +54,12 @@ $produit=[
 echo "<h2>3. Liste de prénoms</h2>";
 
 $prenoms=["Nawel", "Ousmane", "Shezad", "Adam", "Najiba"];
-foreach ($prenoms as $userName){
-    echo "<ul>
-        <li>$userName </li>
-    </ul>";
-}
+
+echo    "<ul>";
+    foreach ($prenoms as $userName){
+        echo "<li>$userName </li>";
+    }
+echo    "</ul>";
 
 /*
 * EXERCICE 4 — Générer plusieurs "cartes produit"
@@ -83,13 +84,12 @@ $products=[
     ]
 ];
 
-
 foreach($products as $values) {
 
-    echo "<div style='border:1px solid black; padding:10px; width:25%'>
-    <p style='text-align:center'> ". $values['nom']. "</p>
-    <p style='text-align:center'> ". $values['prix']. "</p>
-    </div>";
+    echo    "<div style='border-radius: 15px; border:1px solid black; padding:10px; width:25%'>
+                <p style='text-align:center'> ". $values['nom']. "</p>
+                <p style='text-align:center'> ". $values['prix']. "</p>
+            </div>";
     echo "<br>";
     
 }
@@ -143,10 +143,10 @@ echo "<h2>8. Fonction réutilisable pour afficher un produit</h2>";
 
 function afficherProduit($produit){
     foreach($produit as $val ) {
-        echo "<div style='border:1px solid black; width:30%; padding:10px; margin:auto; background-color:black; color:white'>
-        <p style='text-align:center'>" .$val['nom'] ."</p>
-        <p style='text-align:center'>" .$val['prix'] ."</p>
-        </div>";
+        echo    "<div style='border-radius: 15px; border:1px solid black; width:30%; padding:10px; margin:auto; background-color:black; color:white'>
+                    <p style='text-align:center'>" .$val['nom'] ."</p>
+                    <p style='text-align:center'>" .$val['prix'] ."</p>
+                </div>";
         echo "<br>";
     }
 }
@@ -181,7 +181,7 @@ $prod=[
     [
         "nom"=>"souris",
         "prix"=>8
-        ]
+    ]
     ];
     
 $cal=0;
@@ -200,12 +200,12 @@ echo "Le total général est : ". $cal;
 echo "<h2>10. Prix avec remise</h2>";
 
 function appliquerRemise($prix, $pourcentage){
-    $r=$prix*$pourcentage;
+    $r=$prix*$pourcentage/100; //$sr=$prix*(1-$pourcentage/100)
     $remise=$prix-$r;
     return $remise;
 }
 
-echo appliquerRemise(75, 0.25);
+echo appliquerRemise(75, 25);
 
 
 /*
@@ -217,12 +217,20 @@ echo appliquerRemise(75, 0.25);
 echo "<h2>11. Ajouter un produit au panier</h2>";
 
 function ajouterAuPanier($panier, $produit){
-    $panier=[];
-    return $panier[]=$produit;
+    $panier[]=$produit;
+    return $panier;
 }
 
-$procuts=["1","2","3","4","5","6"];
-echo ajouterAuPanier($procuts, "pro");
+$panier=["3"];
+$produit="pro";
+
+$panierTotal=ajouterAuPanier($panier, $produit);
+
+echo"<pre>"; 
+print_r($panierTotal);
+echo"</pre>";
+
+echo "<button style='border-radius:50%'>". count($panierTotal) ."</button>";
 
 
 /*
@@ -238,9 +246,9 @@ $pan=["produit01","produit02","produit03"];
 
 if(!empty($pan)){
     foreach($pan as $prod){
-        echo "<ul> 
-        <li>$prod</li>
-        </ul>";
+        echo    "<ul> 
+                    <li>$prod</li>
+                </ul>";
     }
 }else{
     echo "<p>le panier est vide</p>";
@@ -267,8 +275,12 @@ echo $moyenne;
 */
 echo "<h2>14. Tri des prix croissants</h2>";
 
-$prix=[12,25,63,11,10];
-echo sort($prix);
+$price=[12,25,63,11,10];
+sort($price);
+echo"<pre>";
+print_r($price);
+echo"</pre>";
+
 
 /*
 * EXERCICE 15 — Filtrer produits à moins de 10 €
@@ -277,6 +289,18 @@ echo sort($prix);
 * les produits à moins de 10€.
 */
 echo "<h2>15. Filtrer les produits abordables</h2>";
+
+function prixBas($tab){
+
+return array_filter($tab, function($i) {
+    return $i < 10;
+} );
+}
+
+$arr = [2,25,63,11,8];
+echo"<pre>";
+print_r(prixBas($arr));
+echo"</pre>";
 
 /*
 * EXERCICE 16 — Tableau d’utilisateurs
@@ -293,6 +317,15 @@ echo "<h2>16. Fiches utilisateurs</h2>";
 */
 echo "<h2>17. Table de multiplication</h2>";
 
+function tableMultiplication($n,$k){
+    for($i=1; $i<$k; $i++){
+        $result=$n*$i;
+        echo "<p> $n x $i = $result</p>";
+    }
+}
+
+tableMultiplication(20,20);
+
 /*
 * EXERCICE 18 — Formater un prix
 * -------------------------------
@@ -303,6 +336,16 @@ echo "<h2>17. Table de multiplication</h2>";
 */
 echo "<h2>18. Formater un prix</h2>";
 
+function formaterPrix($prix){
+    foreach($prix as $price){
+        print number_format($price,2,",")." € <br>";
+    }
+}
+
+$tab=[125, 9.9 , 25 , 2.369];
+
+print_r (formaterPrix($tab));
+
 /*
 * EXERCICE 19 — Afficher les produits chers
 * ------------------------------------------
@@ -310,6 +353,27 @@ echo "<h2>18. Formater un prix</h2>";
 * dont le prix est > 50€.
 */
 echo "<h2>19. Filtrer les produits chers</h2>";
+
+$prod2=[
+    [
+        "nom"=>"ecran",
+        "prix"=>230
+    ],
+    [
+        "nom"=>"clavier",
+        "prix"=>100
+    ],
+    [
+        "nom"=>"souris",
+        "prix"=>45
+        ]
+    ];
+
+foreach ($prod2 as $val){
+    if ($val["prix"] >50){
+        echo "<p>".$val["prix"]."</p>";
+    }
+}
 
 /*
 * EXERCICE 20 — Simuler un panier complet
@@ -322,5 +386,28 @@ echo "<h2>19. Filtrer les produits chers</h2>";
 * puis affiche le total global du panier.
 */
 echo "<h2>20. Panier complet (HTML + Calcul)</h2>";
+
+$array=[
+    [
+        "nom"=>"ecran",
+        "prix"=>23,
+        "quantite"=>23
+    ],
+    [
+        "nom"=>"clavier",
+        "prix"=>10,
+        "quantite"=>10
+    ],
+    [
+        "nom"=>"souris",
+        "prix"=>8,
+        "quantite"=>8
+    ]
+];
+
+foreach ($array as $valeur){
+    echo "<p>".$valeur['prix']*$valeur['quantite']."</p>";
+
+}
 
 ?>
