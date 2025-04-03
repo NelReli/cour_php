@@ -26,7 +26,9 @@ foreach($produits as $produit){
     $url="page2.php?article=".urlencode($produit["article"])."&couleur=".urlencode($produit["couleur"])."&prix=".urlencode($produit["prix"])."&description=".urlencode($produit["description"]);
 
 
-    echo "<p><a style='text-decoration:none; color:inherit' href = \"$url\"> voir le produit : {$produit['article']} - {$produit['couleur']} - {$produit['prix']} € </a></p>";
+    echo "<p><a href = \"$url\"> voir le produit : {$produit['article']} - {$produit['couleur']} - {$produit['prix']} € </a></p>"; // methode d'ecriture avec {}
+
+    echo "<p><a href = \"$url\"> voir le produit : ".$produit['article']." - ". $produit['couleur']." - ". $produit['prix']." € </a></p>"; 
 }
 
 ?>

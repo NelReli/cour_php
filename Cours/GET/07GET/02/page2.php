@@ -16,10 +16,13 @@ echo "<p><a href = \"$url\"> Home </a></p>";
 
 <p>
     <?php
+
+    // htmlspecialchars(); fonction pour securiser le site, La fonction htmlspecialchars() convertit certains caractères prédéfinis en entités HTML.
+
     if(isset($_GET["nom"])){ // vérifie si la clé "nom" existe
-        echo $_GET["nom"]."<br>";
+        echo "<p>".htmlspecialchars($_GET["nom"])."</p><br>";
     }else{ // si la clé n'existe pas alors tu affiche "article"
-        echo $_GET["article"]."<br>";
+        echo "<p>". htmlspecialchars($_GET['article'])."</p><br>";
     }
 
 
