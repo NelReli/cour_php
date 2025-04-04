@@ -1,0 +1,9 @@
+Crée une fonction calculerMoyenne($notes) qui retourne la moyenne des valeurs d’un tableau associatif $notes.
+
+Crée un tableau associatif $panier contenant des articles avec leurs prix unitaires et quantités. Écris une fonction calculerTotal($panier) qui retourne le prix total à payer.
+
+Crée un tableau de plusieurs personnes (nom, age) et écris une fonction afficherPersonnesMajores($personnes) qui affiche les personnes ayant 18 ans ou plus.
+
+Crée un tableau associatif d’animaux (nom => espèce) et écris une fonction afficherParEspece($animaux, $espece) pour afficher seulement les animaux d’une certaine espèce.
+
+Crée une fonction inverserTableau($tableau) qui retourne un tableau associatif avec les clés et valeurs inversées (valeur devient clé et inversement).

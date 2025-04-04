@@ -1,0 +1,11 @@
+Fonctions simples avec tableaux associatifs
+
+Écris une fonction afficherInfos($tableau) qui prend un tableau associatif et affiche chaque clé et valeur.
+
+Crée une fonction ajouterElement($tableau, $cle, $valeur) qui ajoute un élément au tableau associatif et le retourne.
+
+Crée une fonction supprimerElement($tableau, $cle) qui supprime une clé du tableau et retourne le tableau modifié.
+
+Crée une fonction trierTableau($tableau) qui trie un tableau associatif par ordre alphabétique des clés.
+
+Écris une fonction filtrerNotes($notes, $seuil) qui retourne uniquement les étudiants ayant une note >= au seuil.

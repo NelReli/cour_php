@@ -1,0 +1,11 @@
+
+
+Créer un tableau associatif $personne contenant les clés suivantes : nom, prenom, age et ville, avec les valeurs de ton choix. Affiche le tableau avec print_r.
+
+Ajouter un nouvel élément à un tableau associatif $personne avec la clé profession et la valeur de ton choix. Affiche le tableau.
+
+Supprimer un élément du tableau associatif $personne (par exemple la clé ville) en utilisant unset().
+
+Crée un tableau associatif appelé $produit avec les clés : nom, prix, quantite. Ensuite, affiche uniquement les valeurs du tableau.
+
+Crée un tableau associatif de plusieurs livres, chaque livre contenant titre, auteur, année. Ensuite, affiche la liste des titres des livres avec une boucle foreach.
