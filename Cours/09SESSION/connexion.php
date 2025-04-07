@@ -4,7 +4,7 @@ echo "<pre>";
 print_r($_SESSION);
 echo "</pre>";
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
     
     $_SESSION['prenom'] = $_POST['prenom'];
     $_SESSION['nom']=  $_POST['nom'];
