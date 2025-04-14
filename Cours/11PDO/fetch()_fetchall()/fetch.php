@@ -4,7 +4,7 @@ error_reporting(E_ALL);
 // Connexion à la base de données avec PDO
 $dsn = 'mysql:host=localhost;dbname=ecole;charset=utf8';
 $user = 'root';       // À adapter
-$password = 'votre_mot_de_passe';       // À adapter
+$password = '';       // À adapter
 
 try {
     $pdo = new PDO($dsn, $user, $password);
