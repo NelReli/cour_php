@@ -7,6 +7,7 @@ require_once "config/bdd.php";
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+
     <style>
         .box{
             border: 1px solid #ccc;
@@ -23,6 +24,7 @@ require_once "config/bdd.php";
 </head>
 <body>
 <h1>CRUD en PHP avec PDO</h1>
+<a href="00exemple\boulangerieBel.php">exemple CRUD</a>
 <p>CRUD est un acronyme qui désigne les quatre opérations de base que l'on peut effectuer sur des données :</p>
 <ul>
     <li><strong>C</strong>reate (Créer)</li>

@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     echo "Message : ".$_SESSION['message']."<br>";
     echo "<br>";
 
-    header("location: accueil.php");//redirection vers la page d'accueil
+    header("Location: accueil.php");//redirection vers la page d'accueil
     exit();//pour éviter d'afficher le reste du code , c'est comme un breack, si le code en bas est deja execute il ne le relance pas
 
 }

@@ -1,4 +1,6 @@
 <div class="box">
+
+    <h1>DELETE</h1>
     <h2>Supprimer un élève</h2>
 
     <?php foreach ($eleves as $e): ?>

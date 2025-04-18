@@ -12,6 +12,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST["sup"], $_POST['id']))
     } else {
         echo "<p style='color:red;'>❌ Aucun élève supprimé. ID inexistant ?</p>";
     }
+
+    header("Refresh: 2; url= " . $_SERVER['PHP_SELF']);
+    exit();
 }
 
 include_once "view/04delete.php";

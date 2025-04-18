@@ -11,11 +11,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['modifier'])) {
         ':id' => $id
     ]);
  
-    if ($stmt->rowCount() > 0) {
+    if ($stmt->rowCount() > 0) { // verifie le nombre de ligne modifie par la requete s il y a modification execute le code sinon aucun changement
         echo "<p style='color: green;'>✅ Élève ID $id mis à jour avec succès ! Nouveau nom : $nouveauNom</p>";
     } else {
         echo "<p style='color: red;'>❌ Aucun changement effectué.</p>";
     }
+
+    header("Refresh: 2; url= " . $_SERVER['PHP_SELF']);
+    exit();
 }
 
 include_once "view/03update.php";

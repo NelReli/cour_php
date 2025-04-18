@@ -2,6 +2,7 @@
 
 <div class="box">
 
+    <h1>UPDATE</h1>
     <h2>Modifier le nom d’un élève</h2>
 
     <form method="POST">
@@ -13,5 +14,5 @@
         <br>
         <input type="submit" name="modifier" value="Mettre à jour">
     </form>
-    
+
 </div>
